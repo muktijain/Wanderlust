@@ -1,0 +1,77 @@
+<style>
+
+</style> 
+ 
+ <div>
+    <nav class="navbar navbar-expand-md bg-body-light sticky-top shadow-sm py-2">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/listings">
+                <i class="fa-solid fa-compass"></i>
+            </a>
+
+                <div class="navbar-nav">
+
+                </div>
+
+                    <div class="navbar-nav">
+                        <nav class="navbar bg-body-tertiary">
+                            <div class="container-fluid">
+
+                            </div>
+                        </nav>
+                    </div>
+                    
+            <button
+                 class="navbar-toggler" 
+                 type="button" 
+                 data-bs-toggle="collapse" 
+                 data-bs-target="#navbarNav" 
+                 aria-controls="navbarNav" 
+                 aria-expanded="false" 
+                 aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav me-auto mt-2 mt-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/listings">Explore</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input 
+                            class="form-control me-2 search-input" 
+                            type="search" 
+                            placeholder="Search  destinations"
+                        />
+                        <button class="btn btn-search" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li>
+                        <a class="nav-link" href="/listings/new">Airbnb your home </a>
+                    </li>
+                    <% if(!currUser) { %>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" href="/signup"><b>Sign up</b></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" href="/login"><b>Log in</b></a>
+                    </li>
+                    <% }%>
+
+                    <% if(currUser) { %>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" href="/logout"><b>Log out</b></a>
+                    </li>
+                    <% }%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
