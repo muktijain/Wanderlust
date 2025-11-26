@@ -1,11 +1,28 @@
 <% layout('/layouts/boilerplate') -%>
+<style>
+  @media only screen and (max-width: 575px) {
+  .starability-slot {
+    /* adjust star size or spacing for mobile */
+    font-size: 0.8rem !important;  /* smaller stars */
+  }
+  .card.col-3 {
+    /* Make cards full width on mobile */
+    flex: 1 1 50%;
+    margin: 0 0 1rem 0;
+  }
+}
+</style>
 <script>
   window.mapToken = "<%= process.env.MAP_TOKEN %>";
   const listing = <%- JSON.stringify(listing) %>;
 </script>
 
 <div class="container mt-3">
-
+    <a href="/listings">
+        <button class="back-btn mb-3">
+            <i class="fa-solid fa-caret-left"></i> Back
+        </button>
+    </a>
   
   <!-- Listing Title -->
   <div class="row mb-4">
@@ -55,7 +72,7 @@
 <!-- review section -->
  <% if(currUser) { %>
   <hr />
-  <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+  <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 sm-6 m-3">
     <h4>Leave a Review</h4>
     <form action="/listings/<%= listing.id %>/reviews" 
       method="POST" 
@@ -129,7 +146,7 @@
   <div class="row m-3">
     <p><b>All Reviews</b></p>
       <% for(let review of listing.reviews) { %>
-      <div class="card col-3 ms-3 mb-3 ">
+      <div class="card col-3 ms-3 mb-3 sm-5 m-3">
         <div class="card-body">
           <h5 class="card-title"><i>@ <%= review.author ? review.author.username : "Deleted User" %></i></h5>
           <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
@@ -147,9 +164,11 @@
   </div>
 <% } %>
 <hr />
-  <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mb-3">
+  <div class="col-lg-8 offset-lg-2 col-md-10 sm-4 offset-md-1 m-4 mb-3">
     <h3>Where you'll be</h3>
     <div id="map"></div>
   </div>
+  <br/>
+  <br/>
 
   <script src="/js/map.js"></script>

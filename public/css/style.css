@@ -19,6 +19,19 @@ body{
     color: #fe424d;
     font-size: 2rem;
 }
+.site-name{
+    font-family:"Dancing Script", Georgia, serif, cursive;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+ .navbar-brand .site-name {
+  margin: 0;
+  line-height: 1;
+}
+.navbar-brand i {
+  display: inline-block;
+  vertical-align: middle;
+}
 .navbar .nav-link {
     color: #444 !important;
     font-size: 0.95rem;

@@ -1,8 +1,13 @@
 <% layout('/layouts/boilerplate') -%>
 <div class="row">
-    <div class="col-8 offset">
+    <a href="/listings">
+        <button class="back-btn mb-3">
+            <i class="fa-solid fa-caret-left"></i> Back
+        </button>
+    </a><h5>Host with heart</h5>
+    <p><b>let your space belong..</b></p>
+    <div class="col-8 offset m-3">
         <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
-            <h3>Create a New Listing</h3>
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input name="listing[title]" 

@@ -1,5 +1,10 @@
 <% layout('/layouts/boilerplate') -%>
 <div class="row mt-3">
+    <a href="/listings/<%= listing.id %>">
+        <button class="back-btn mb-3">
+            <i class="fa-solid fa-caret-left"></i> Back
+        </button>
+    </a>
     <div class="col-8 offset-2">
         <h3>Edit your listing</h3>
         <form method="POST" 
@@ -53,7 +58,7 @@
                 <br />
                 <div class="mb-3">
                     Original Image:
-                    <img src="<%= originalImageUrl %>">
+                    <img src="<%= originalImageUrl %>" height="80rem">
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Upload New Image</label>
